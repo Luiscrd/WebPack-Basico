@@ -6,3 +6,6 @@ temp/
 
 # ignore ALL files in node_modules
 node_modules/
+
+# ignore ALL files in dist
+dist/

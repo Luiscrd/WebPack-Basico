@@ -1,9 +1,11 @@
 const HtmlWebpack = require('html-webpack-plugin');
 const MiniCssExtract = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const CssMinimizer = require("css-minimizer-webpack-plugin");
+const Terser = require("terser-webpack-plugin");
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
 
     output: {
       clean: true
@@ -34,14 +36,19 @@ module.exports = {
       ]
     },
 
-    optimization: {},
+    optimization: {
+      minimize: true,
+      minimizer: [
+        new CssMinimizer(),
+        new Terser(),
+      ]
+    },
 
     plugins: [
       new HtmlWebpack({
         // title: 'WebPack Básico',
         // filename: 'index.html',
         template: './src/index.html',
-        favicon: './src/favicon.ico',
       }),
       new MiniCssExtract({
         // filename: '[name].[fullhash].css',
