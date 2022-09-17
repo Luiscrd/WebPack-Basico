@@ -7,7 +7,6 @@ const crearChistesHtml = () => {
 
     const html = `
     <div class="d-flex align-items-center justify-content-between">
-        <button class="btn btn-danger">Volver</button>
         <img src="./assets/img/logo.png" alt="Logo" class="logo">
         <h1 class="tit">Chistes Chuk Norris</h1>
         <button class="btn btn-primary">Otro chiste</button>
